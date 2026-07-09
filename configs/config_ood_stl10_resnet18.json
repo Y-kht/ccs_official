@@ -1,0 +1,71 @@
+{
+    "id_dataset": "stl10",
+    "ood_datasets": ["svhn", "cifar10", "cifar100"],
+    "model": "resnet18_simclr",
+    "batch_size": 256,
+    "num_workers": 2,
+    "reg_w": 0.0,
+    "scale": 7.0,
+    "n_norms": 1,
+    "knn_k": 50,
+    "sampling": "augmentation",
+    "n_ref": 2000,
+    "save_dir": "./results_ood/stl10",
+    "seeds": [42, 43, 44, 45, 46, 47],
+    "methods": [
+        {
+            "name": "Single (Neg)",
+            "type": "ccs",
+            "metric": "single",
+            "problem": "neg",
+            "epochs": 150,
+            "lr": 0.1,
+            "reg_w": 0.0,
+            "alpha": 0.05,
+            "k": 20,
+            "r": 1.0
+        },
+        {
+            "name": "Generalized (Neg)",
+            "type": "ccs",
+            "metric": "generalized",
+            "problem": "neg",
+            "epochs": 150,
+            "lr": 0.1,
+            "reg_w": 0.0,
+            "alpha": 0.05,
+            "k": 20,
+            "r": 1.0
+        },
+        {
+            "name": "Single (Neg,InfoNCE)",
+            "type": "ccs",
+            "metric": "single",
+            "problem": "neg",
+            "epochs": 150,
+            "lr": 0.1,
+            "reg_w": 0.0,
+            "alpha": 0.05,
+            "k": 20,
+            "r": 1.0,
+            "add_infonce": true,
+            "model_lr": 0.1,
+            "alternating_training": true
+        },
+        {
+            "name": "Generalized (Neg,InfoNCE)",
+            "type": "ccs",
+            "metric": "generalized",
+            "problem": "neg",
+            "epochs": 150,
+            "lr": 0.1,
+            "reg_w": 0.0,
+            "alpha": 0.05,
+            "k": 20,
+            "r": 1.0,
+            "add_infonce": true,
+            "model_lr": 0.1,
+            "alternating_training": true
+        }
+    ]
+}

@@ -1,0 +1,81 @@
+\begin{table}[h!]
+\centering
+\caption{STL10, model=resnet18_simclr, $k=20$, $\alpha=0.05$, $n_\mathrm{test}=4000$, seeds=[42, 43, 44, 45, 46, 47].}
+\tiny
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Method} & \textbf{Threshold} & \textbf{Coverage} & \textbf{Exclusion} & \textbf{LogVol} \\
+\midrule
+Conformal Ball ($\ell_2$) 
+& $25.1952 \pm 0.1848$ 
+& $94.9 \pm 0.4$\% 
+& $27.0 \pm 1.3$\% 
+& $1.52 \pm 0.01$ \\
+Mahalanobis Ellipsoid 
+& $29.6382 \pm 0.1266$ 
+& $94.9 \pm 0.3$\% 
+& \second{$87.1 \pm 0.6$\%} 
+& $0.02 \pm 0.0$ \\
+Single (Neg) 
+& $48.0201 \pm 7.8329$ 
+& $95.0 \pm 0.4$\% 
+& $44.7 \pm 2.9$\% 
+& $4.09 \pm 0.03$ \\
+Generalized (Neg) 
+& $112.8808 \pm 16.4181$ 
+& $95.1 \pm 0.2$\% 
+& $59.0 \pm 0.7$\% 
+& $3.05 \pm 0.22$ \\
+Single (Vol) 
+& $499.4099 \pm 146.0385$ 
+& $95.0 \pm 0.5$\% 
+& $22.5 \pm 1.4$\% 
+& $1.32 \pm 0.02$ \\
+Generalized (Vol) 
+& $2492.7096 \pm 1062.3045$ 
+& $95.0 \pm 0.5$\% 
+& $29.2 \pm 2.3$\% 
+& $0.81 \pm 0.23$ \\
+Single (Neg,Vol) 
+& $36.1894 \pm 7.9294$ 
+& $95.0 \pm 0.6$\% 
+& $35.9 \pm 3.6$\% 
+& $2.02 \pm 0.36$ \\
+Generalized (Neg,Vol) 
+& $317.5659 \pm 62.6935$ 
+& $95.0 \pm 0.5$\% 
+& $50.9 \pm 2.1$\% 
+& $1.48 \pm 0.04$ \\
+Single (Vol,InfoNCE) 
+& $14.5700 \pm 12.7252$ 
+& $94.8 \pm 0.4$\% 
+& $40.5 \pm 3.2$\% 
+& $0.54 \pm 0.22$ \\
+Generalized (Vol,InfoNCE) 
+& $134.5610 \pm 43.9348$ 
+& $94.9 \pm 0.3$\% 
+& $44.8 \pm 3.3$\% 
+& \first{$-0.85 \pm 0.97$} \\
+Single (Neg,InfoNCE) 
+& $17.7334 \pm 3.8720$ 
+& $95.0 \pm 0.3$\% 
+& $66.1 \pm 6.3$\% 
+& $2.19 \pm 0.10$ \\
+Generalized (Neg,InfoNCE) 
+& $19.9423 \pm 1.4303$ 
+& $95.2 \pm 0.5$\% 
+& \first{$89.8 \pm 1.3$\%} 
+& \third{$-0.07 \pm 0.04$} \\
+Single (Neg,Vol,InfoNCE) 
+& $14.3091 \pm 2.9364$ 
+& $95.1 \pm 0.4$\% 
+& $64.1 \pm 9.0$\% 
+& $1.23 \pm 0.35$ \\
+Generalized (Neg,Vol,InfoNCE) 
+& $36.3762 \pm 3.1219$ 
+& $95.1 \pm 0.4$\% 
+& \third{$85.5 \pm 4.1$\%} 
+& \second{$-0.23 \pm 0.14$} \\
+\bottomrule
+\end{tabular}
+\end{table}

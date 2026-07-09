@@ -1,0 +1,34 @@
+\begin{table}[h!]
+\centering
+\caption{OOD detection on CIFAR100 (ID). Backbone: repvgg_a2, seeds$=[42, 43, 44, 45, 46, 47]$.}
+\footnotesize
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Method} & \multicolumn{2}{c}{\textbf{SVHN}} & \multicolumn{2}{c}{\textbf{CIFAR10}} & \textbf{Time (s)} \\
+\cmidrule(lr){2-3}
+\cmidrule(lr){4-5}
+ & AUROC$\uparrow$ & FPR95$\downarrow$ & AUROC$\uparrow$ & FPR95$\downarrow$ & \\
+\midrule
+Single (Neg) 
+& $99.8 \pm 0.1$ 
+& $0.1 \pm 0.1$ 
+& $94.9 \pm 0.9$ 
+& $30.7 \pm 4.8$ \\
+Generalized (Neg) 
+& $99.8 \pm 0.0$ 
+& $0.5 \pm 0.2$ 
+& $85.9 \pm 0.7$ 
+& $52.7 \pm 2.8$ \\
+Single (Neg,InfoNCE) 
+& $99.8 \pm 0.1$ 
+& $0.2 \pm 0.2$ 
+& $94.6 \pm 0.7$ 
+& $27.4 \pm 2.7$ \\
+Generalized (Neg,InfoNCE) 
+& $99.9 \pm 0.0$ 
+& $0.0 \pm 0.0$ 
+& $96.7 \pm 0.7$ 
+& $19.3 \pm 2.7$ \\
+\bottomrule
+\end{tabular}
+\end{table}

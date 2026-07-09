@@ -1,0 +1,12 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+
+# --- Datasets (large, not tracked) ---
+/data/
+
+# --- Model weights / checkpoints (large, not tracked) ---
+*.pt
+*.pth
+*.npz
+/results/checkpoints/

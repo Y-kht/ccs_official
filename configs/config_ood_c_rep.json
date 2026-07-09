@@ -1,0 +1,81 @@
+{
+    "id_dataset": "cifar100",
+    "ood_datasets": [
+        "svhn",
+        "cifar10"
+    ],
+    "model": "repvgg_a2",
+    "batch_size": 256,
+    "num_workers": 2,
+    "reg_w": 0.0,
+    "scale": 7.0,
+    "n_norms": 1,
+    "knn_k": 50,
+    "sampling": "augmentation",
+    "n_ref": 2000,
+    "save_dir": "./results_ood/cifar100",
+    "methods": [
+        {
+            "name": "Single (Neg)",
+            "type": "ccs",
+            "metric": "single",
+            "problem": "neg",
+            "epochs": 150,
+            "lr": 0.1,
+            "reg_w": 0.0,
+            "alpha": 0.05,
+            "k": 50,
+            "r": 0.2
+        },
+        {
+            "name": "Generalized (Neg)",
+            "type": "ccs",
+            "metric": "generalized",
+            "problem": "neg",
+            "epochs": 150,
+            "lr": 0.1,
+            "reg_w": 0.0,
+            "alpha": 0.05,
+            "k": 50,
+            "r": 0.2
+        },
+        {
+            "name": "Single (Neg,InfoNCE)",
+            "type": "ccs",
+            "metric": "single",
+            "problem": "neg",
+            "epochs": 150,
+            "lr": 0.1,
+            "reg_w": 0.0,
+            "alpha": 0.05,
+            "k": 50,
+            "r": 0.2,
+            "add_infonce": true,
+            "model_lr": 0.1,
+            "alternating_training": true
+        },
+        {
+            "name": "Generalized (Neg,InfoNCE)",
+            "type": "ccs",
+            "metric": "generalized",
+            "problem": "neg",
+            "epochs": 150,
+            "lr": 0.1,
+            "reg_w": 0.0,
+            "alpha": 0.05,
+            "k": 50,
+            "r": 0.2,
+            "add_infonce": true,
+            "model_lr": 0.1,
+            "alternating_training": true
+        }
+    ],
+    "seeds": [
+        42,
+        43,
+        44,
+        45,
+        46,
+        47
+    ]
+}

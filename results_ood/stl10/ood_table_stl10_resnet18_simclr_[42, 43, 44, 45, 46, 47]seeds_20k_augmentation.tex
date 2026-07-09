@@ -1,0 +1,43 @@
+\begin{table}[h!]
+\centering
+\caption{OOD detection on STL10 (ID). Backbone: resnet18_simclr, seeds$=[42, 43, 44, 45, 46, 47]$.}
+\footnotesize
+\begin{tabular}{lccccccc}
+\toprule
+\textbf{Method} & \multicolumn{2}{c}{\textbf{SVHN}} & \multicolumn{2}{c}{\textbf{CIFAR10}} & \multicolumn{2}{c}{\textbf{CIFAR100}} & \textbf{Time (s)} \\
+\cmidrule(lr){2-3}
+\cmidrule(lr){4-5}
+\cmidrule(lr){6-7}
+ & AUROC$\uparrow$ & FPR95$\downarrow$ & AUROC$\uparrow$ & FPR95$\downarrow$ & AUROC$\uparrow$ & FPR95$\downarrow$ & \\
+\midrule
+Single (Neg) 
+& $96.2 \pm 0.7$ 
+& $23.0 \pm 6.9$ 
+& $90.1 \pm 2.0$ 
+& $54.5 \pm 5.4$ 
+& $92.3 \pm 1.6$ 
+& $47.5 \pm 6.3$ \\
+Generalized (Neg) 
+& $99.2 \pm 0.3$ 
+& $2.7 \pm 1.7$ 
+& $89.9 \pm 1.7$ 
+& $50.1 \pm 5.5$ 
+& $92.0 \pm 1.6$ 
+& $41.8 \pm 6.7$ \\
+Single (Neg,InfoNCE) 
+& $63.6 \pm 6.6$ 
+& $94.4 \pm 3.3$ 
+& $63.5 \pm 8.0$ 
+& $89.2 \pm 4.8$ 
+& $62.1 \pm 9.6$ 
+& $91.3 \pm 5.1$ \\
+Generalized (Neg,InfoNCE) 
+& $92.3 \pm 0.5$ 
+& $53.4 \pm 2.0$ 
+& $82.6 \pm 1.2$ 
+& $66.6 \pm 2.3$ 
+& $77.9 \pm 1.4$ 
+& $78.0 \pm 2.2$ \\
+\bottomrule
+\end{tabular}
+\end{table}

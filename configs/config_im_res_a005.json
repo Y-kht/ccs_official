@@ -1,0 +1,159 @@
+{
+    "shared": {
+        "dataset": "imagenet100",
+        "model": "resnet18",
+        "alpha": 0.05,
+        "k": 20,
+        "r": 0.2,
+        "sampling": "augmentation",
+        "batch_size": 256,
+        "num_workers": 2,
+        "reg_w": 0.0,
+        "optimizer": "sgd",
+        "grad_clip": 1.0,
+        "scale": 7.0,
+        "n_norms": 1,
+        "use_amp": false,
+        "with_replacement": false,
+        "contrastive_weight": 1.0,
+        "volume_weight": 0.1,
+        "nce_temperature": 0.1,
+        "delta": 1.0
+    },
+    "methods": [
+        {
+            "name": "Conformal Ball ($\\ell_2$)",
+            "type": "baseline",
+            "case": "0a"
+        },
+        {
+            "name": "Mahalanobis Ellipsoid",
+            "type": "baseline",
+            "case": "0b"
+        },
+        {
+            "name": "Single (Neg)",
+            "type": "metric",
+            "metric": "single",
+            "problem": "neg",
+            "add_infonce": false,
+            "lr": 0.1,
+            "epochs": 150
+        },
+        {
+            "name": "Generalized (Neg)",
+            "type": "metric",
+            "metric": "generalized",
+            "problem": "neg",
+            "add_infonce": false,
+            "lr": 0.1,
+            "epochs": 150
+        },
+        {
+            "name": "Single (Vol)",
+            "type": "metric",
+            "metric": "single",
+            "problem": "vol",
+            "add_infonce": false,
+            "lr": 0.1,
+            "epochs": 150
+        },
+        {
+            "name": "Generalized (Vol)",
+            "type": "metric",
+            "metric": "generalized",
+            "problem": "vol",
+            "add_infonce": false,
+            "lr": 0.1,
+            "epochs": 150
+        },
+        {
+            "name": "Single (Neg,Vol)",
+            "type": "metric",
+            "metric": "single",
+            "problem": "neg",
+            "add_infonce": false,
+            "lr": 0.1,
+            "epochs": 150,
+            "lam": 0.001
+        },
+        {
+            "name": "Generalized (Neg,Vol)",
+            "type": "metric",
+            "metric": "generalized",
+            "problem": "neg",
+            "add_infonce": false,
+            "lr": 0.1,
+            "epochs": 150,
+            "lam": 0.001
+        },
+        {
+            "name": "Single (Vol,InfoNCE)",
+            "type": "metric",
+            "metric": "single",
+            "problem": "vol",
+            "add_infonce": true,
+            "lr": 0.1,
+            "model_lr": 0.1,
+            "epochs": 150,
+            "alternating_training": true
+        },
+        {
+            "name": "Generalized (Vol,InfoNCE)",
+            "type": "metric",
+            "metric": "generalized",
+            "problem": "vol",
+            "add_infonce": true,
+            "lr": 0.1,
+            "model_lr": 0.1,
+            "epochs": 150,
+            "alternating_training": true
+        },
+        {
+            "name": "Single (Neg,InfoNCE)",
+            "type": "metric",
+            "metric": "single",
+            "problem": "neg",
+            "add_infonce": true,
+            "lr": 0.1,
+            "model_lr": 0.1,
+            "epochs": 150,
+            "alternating_training": true
+        },
+        {
+            "name": "Generalized (Neg,InfoNCE)",
+            "type": "metric",
+            "metric": "generalized",
+            "problem": "neg",
+            "add_infonce": true,
+            "lr": 0.1,
+            "model_lr": 0.1,
+            "epochs": 150,
+            "alternating_training": true
+        },
+        {
+            "name": "Single (Neg,Vol,InfoNCE)",
+            "type": "metric",
+            "metric": "single",
+            "problem": "neg",
+            "add_infonce": true,
+            "lr": 0.1,
+            "model_lr": 0.1,
+            "epochs": 150,
+            "alternating_training": true,
+            "lam": 0.001
+        },
+        {
+            "name": "Generalized (Neg,Vol,InfoNCE)",
+            "type": "metric",
+            "metric": "generalized",
+            "problem": "neg",
+            "add_infonce": true,
+            "lr": 0.1,
+            "model_lr": 0.1,
+            "epochs": 150,
+            "alternating_training": true,
+            "lam": 0.001
+        }
+    ]
+}

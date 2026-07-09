@@ -1,0 +1,36 @@
+\begin{table}[h!]
+\centering
+\caption{CIFAR100, model=repvgg_a2, $k=50$, $\alpha=0.05$, $n_\mathrm{test}=5000$, seeds=[42, 43, 44, 45, 46, 47].}
+\tiny
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Method} & \textbf{Threshold} & \textbf{Coverage} & \textbf{Exclusion} & \textbf{LogVol} \\
+\midrule
+HIB 
+& $0.0000 \pm 0.0000$ 
+& $69.1 \pm 0.2$\% 
+& $100.0 \pm 0.0$\% 
+& $-2518.75 \pm 13.71$ \\
+HIB-mog 
+& $0.0000 \pm 0.0000$ 
+& $78.9 \pm 0.1$\% 
+& $100.0 \pm 0.0$\% 
+& $-2512.42 \pm 10.84$ \\
+Convex Hull Shrinkage 
+& $0.0000 \pm 0.0000$ 
+& $49.4 \pm 0.5$\% 
+& $100.0 \pm 0.0$\% 
+& $0.00 \pm 0.00$ \\
+Single (Neg) 
+& $20.9519 \pm 8.0645$ 
+& $95.1 \pm 0.4$\% 
+& $70.1 \pm 2.5$\% 
+& $2.96 \pm 0.25$ \\
+Generalized (Neg) 
+& $38.7575 \pm 2.9598$ 
+& $95.0 \pm 0.2$\% 
+& $82.9 \pm 0.5$\% 
+& $-1.30 \pm 0.41$ \\
+\bottomrule
+\end{tabular}
+\end{table}

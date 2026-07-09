@@ -1,0 +1,87 @@
+{
+    "shared": {
+        "n_clusters": 5,
+        "n_per_cluster": 5000,
+        "d": 3,
+        "separation": 4,
+        "std": 1.0,
+        "distribution": "mixed",
+        "train_ratio": 0.6,
+        "p_train": 1.0,
+        "alpha": 0.05,
+        "k": 500,
+        "batch_size": 256,
+        "optimizer": "sgd",
+        "grad_clip": 1.0,
+        "scale": 7.0,
+        "n_norms": 1
+    },
+    "methods": [
+        {
+            "name": "Conformal Ball ($\\ell_2$)",
+            "type": "baseline",
+            "case": "0a"
+        },
+        {
+            "name": "Mahalanobis Ellipsoid",
+            "type": "baseline",
+            "case": "0b"
+        },
+        {
+            "name": "Single (Neg)",
+            "type": "metric",
+            "metric": "single",
+            "problem": "neg",
+            "add_infonce": false,
+            "lr": 0.3,
+            "epochs": 150
+        },
+        {
+            "name": "Generalized (Neg)",
+            "type": "metric",
+            "metric": "generalized",
+            "problem": "neg",
+            "add_infonce": false,
+            "lr": 0.3,
+            "epochs": 150
+        },
+        {
+            "name": "Single (Vol)",
+            "type": "metric",
+            "metric": "single",
+            "problem": "vol",
+            "add_infonce": false,
+            "lr": 0.3,
+            "epochs": 150
+        },
+        {
+            "name": "Generalized (Vol)",
+            "type": "metric",
+            "metric": "generalized",
+            "problem": "vol",
+            "add_infonce": false,
+            "lr": 0.3,
+            "epochs": 150
+        },
+        {
+            "name": "Single (Neg,Vol)",
+            "type": "metric",
+            "metric": "single",
+            "problem": "vol_neg",
+            "add_infonce": false,
+            "lr": 0.3,
+            "epochs": 150,
+            "lam": 0.001
+        },
+        {
+            "name": "Generalized (Neg,Vol)",
+            "type": "metric",
+            "metric": "generalized",
+            "problem": "vol_neg",
+            "add_infonce": false,
+            "lr": 0.3,
+            "epochs": 150,
+            "lam": 0.001
+        }
+    ]
+}
